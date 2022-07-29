@@ -1,0 +1,26 @@
+Create a function that gives a personalized greeting. This function 
+takes two parameters: name and owner.
+Use conditionals to return the proper message:
+
+case			     return
+name equals owner	'Hello boss'
+otherwise		    'Hello guest'
+-----------------------------------------------------------------------
+Создайте функцию, которая выдает персонализированное приветствие. Эта функция 
+принимает два параметра: nameи owner.
+Используйте условные выражения, чтобы вернуть правильное сообщение:
+
+кейс			      возвращаться
+имя равно владельцу	  'Привет босс'
+в противном случае	   «Привет, гость»
+-----------------------------------------------------------------------
+
+import codewars_test as test
+from solution import greet
+
+@test.describe("Fixed Tests")
+def fixed_tests():
+    @test.it('Basic Test Cases')
+    def basic_test_cases():
+        test.assert_equals(greet('Daniel', 'Daniel'), 'Hello boss')
+        test.assert_equals(greet('Greg', 'Daniel'), 'Hello guest')
