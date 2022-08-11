@@ -1,7 +1,4 @@
 # my task solution
-import re
-
-
 def get_count(sentence):
     vowels = "aeiou"
     return sum(item in vowels for item in sentence)
