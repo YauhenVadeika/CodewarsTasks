@@ -1,0 +1,22 @@
+Code as fast as you can! You need to double the integer and return it.
+-----------------------------------------------------------------------
+Код так быстро, как вы можете! Вам нужно удвоить целое число и вернуть его.
+-----------------------------------------------------------------------
+
+import codewars_test as test
+
+try:
+    # backwards compatibility
+    double_integer = doubleInteger
+except NameError:
+    pass
+
+@test.describe('Tests')
+def tests():
+    @test.it('Sample Test Case')
+    def sample_test_case():
+        test.assert_equals(double_integer(2), 4);
+        test.assert_equals(double_integer(4), 8);
+        test.assert_equals(double_integer(-10), -20);
+        test.assert_equals(double_integer(0), 0);
+        test.assert_equals(double_integer(100), 200);
