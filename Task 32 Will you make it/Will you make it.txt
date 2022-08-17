@@ -1,0 +1,32 @@
+You were camping with your friends far away from home, but when it's time 
+to go back, you realize that your fuel is running out and the nearest pump 
+is 50 miles away! You know that on average, your car runs on about 25 miles 
+per gallon. There are 2 gallons left.
+Considering these factors, write a function that tells you if it is possible 
+to get to the pump or not.
+
+Function should return true if it is possible and false if not.
+-----------------------------------------------------------------------
+Вы были в походе с друзьями далеко от дома, но когда пришло время
+чтобы вернуться, вы понимаете, что топливо на исходе и ближайшая заправка
+находится в 50 милях! Вы знаете, что в среднем ваша машина проезжает около 25 миль.
+за галлон. Осталось 2 галлона.
+Учитывая эти факторы, напишите функцию, которая сообщает вам, возможно ли
+добраться до помпы или нет.
+
+Функция должна возвращать true, если это возможно, и false, если нет.
+-----------------------------------------------------------------------
+
+import codewars_test as test
+
+try: 
+    from solution import zeroFuel as zero_fuel
+except ImportError: 
+    from solution import zero_fuel 
+
+@test.describe("Fixed Tests")
+def fixed_tests():
+    @test.it('Basic Test Cases')
+    def basic_test_cases():
+        test.assert_equals(zero_fuel(50, 25, 2), True)
+        test.assert_equals(zero_fuel(100, 50, 1), False)
