@@ -1,0 +1,32 @@
+Given a set of numbers, return the additive inverse of each. 
+Each positive becomes 
+negatives, and the negatives become positives.
+
+invert([1,2,3,4,5]) == [-1,-2,-3,-4,-5]
+invert([1,-2,3,-4,5]) == [-1,2,-3,4,-5]
+invert([]) == []
+
+You can assume that all values are integers. 
+Do not mutate the input array/list.
+-----------------------------------------------------------------------
+Учитывая набор чисел, верните добавку, обратную каждому из них. 
+Каждый позитив становится
+отрицательные, а отрицательные становятся положительными.
+
+инвертировать ([1,2,3,4,5]) == [-1,-2,-3,-4,-5]
+инвертировать ([1,-2,3,-4,5]) == [-1,2,-3,4,-5]
+инвертировать ([]) == []
+Можно предположить, что все значения являются целыми числами. 
+Не изменяйте входной массив/список.
+-----------------------------------------------------------------------
+
+import codewars_test as test
+from solution import invert
+
+@test.describe("Invert values")
+def fixed_tests():
+    @test.it('Basic Test Cases')
+    def basic_test_cases():
+        test.assert_equals(invert([1,2,3,4,5]),[-1,-2,-3,-4,-5])
+        test.assert_equals(invert([1,-2,3,-4,5]), [-1,2,-3,4,-5])
+        test.assert_equals(invert([]), [])
