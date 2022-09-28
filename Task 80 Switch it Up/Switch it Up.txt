@@ -1,0 +1,28 @@
+
+When provided with a number between 0-9, return it in words.
+
+Input :: 1
+
+Output :: "One".
+
+If your language supports it, try using a switch statement.
+
+-----------------------------------------------------------------------
+Если указано число от 0 до 9, верните его словами.
+
+Вход :: 1
+
+Выход :: "Один".
+
+Если ваш язык поддерживает это, попробуйте использовать оператор switch.
+-----------------------------------------------------------------------
+
+import codewars_test as test
+from solution import switch_it_up
+
+@test.describe("Fixed Tests")
+def fixed_tests():
+    @test.it('Basic Test Cases')
+    def basic_test_cases():
+        test.assert_equals(switch_it_up(0), "Zero")
+        test.assert_equals(switch_it_up(9), "Nine")
