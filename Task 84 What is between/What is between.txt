@@ -1,0 +1,36 @@
+
+Complete the function that takes two integers 
+(a, b, where a < b) 
+and return an array of all integers between the 
+input parameters, including them.
+
+For example:
+
+a = 1
+b = 4
+--> [1, 2, 3, 4]
+
+-----------------------------------------------------------------------
+
+Завершите функцию, которая принимает два целых числа
+(а, б, где а < б)
+и вернуть массив всех целых чисел между
+входные параметры, включая их.
+
+Например:
+
+а = 1
+б = 4
+--> [1, 2, 3, 4]
+
+-----------------------------------------------------------------------
+
+import codewars_test as test
+from solution import between
+
+@test.describe("Fixed Tests")
+def fixed_tests():
+    @test.it('Basic Test Cases')
+    def basic_test_cases():
+        test.assert_equals(between(1, 4), [1, 2, 3, 4])
+        test.assert_equals(between(-2, 2), [-2, -1, 0, 1, 2])
