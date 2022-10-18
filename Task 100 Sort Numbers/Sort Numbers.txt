@@ -1,0 +1,37 @@
+
+Finish the solution so that it sorts 
+the passed in array of numbers. 
+If the function passes in an empty array 
+or null/nil value then it should return an empty array.
+
+For example:
+
+solution([1,2,3,10,5]) # should return [1,2,3,5,10]
+solution(None) # should return []
+
+-----------------------------------------------------------------------
+
+Завершите решение, чтобы оно отсортировалось
+переданный массив чисел.
+Если функция проходит в пустой массив
+или значение null/nil, тогда он должен возвращать пустой массив.
+
+Например:
+
+решение([1,2,3,10,5]) # должно вернуть [1,2,3,5,10]
+решение(Нет) # должно возвращать []
+
+-----------------------------------------------------------------------
+
+import codewars_test as test
+from solution import solution
+
+@test.describe("Fixed Tests")
+def fixed_tests():
+    @test.it('Basic Test Cases')
+    def basic_test_cases():
+        test.assert_equals(solution([1,2,3,10,5]), [1,2,3,5,10])
+        test.assert_equals(solution(None), [])
+        test.assert_equals(solution([]), [])
+        test.assert_equals(solution([20,2,10]), [2,10,20])
+        test.assert_equals(solution([2,20,10]), [2,10,20])
