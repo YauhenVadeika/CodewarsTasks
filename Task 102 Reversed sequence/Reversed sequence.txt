@@ -1,0 +1,20 @@
+
+Build a function that returns an array of integers from n to 1 where n>0.
+
+Example : n=5 --> [5,4,3,2,1]
+-----------------------------------------------------------------------
+
+Создайте функцию, которая возвращает массив целых чисел от n до 1, где n>0.
+
+Пример: n=5 --> [5,4,3,2,1]
+
+-----------------------------------------------------------------------
+
+import codewars_test as test
+from solution import reverse_seq
+
+@test.describe("Fixed Tests")
+def fixed_tests():
+    @test.it('Basic Test Cases')
+    def basic_test_cases():
+        test.assert_equals(reverse_seq(5),[5,4,3,2,1])
