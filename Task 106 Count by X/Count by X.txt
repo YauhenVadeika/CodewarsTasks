@@ -1,0 +1,43 @@
+
+Create a function with two arguments that will 
+return an array of the first n multiples of x.
+
+Assume both the given number and the number 
+of times to count will be positive numbers 
+greater than 0.
+
+Return the results as an array or list ( depending on language ).
+
+Examples
+count_by(1,10) #should return [1,2,3,4,5,6,7,8,9,10]
+count_by(2,5) #should return [2,4,6,8,10]
+
+-----------------------------------------------------------------------
+
+Создайте функцию с двумя аргументами, которая будет
+вернуть массив первых n кратных x.
+
+Предположим, что заданное число и число
+количество раз для подсчета будут положительными числами
+больше 0.
+
+Возвращайте результаты в виде массива или списка (в зависимости от языка).
+
+Примеры
+count_by(1,10) #должен вернуть [1,2,3,4,5,6,7,8,9,10]
+count_by(2,5) #должен возвращать [2,4,6,8,10]
+
+-----------------------------------------------------------------------
+
+import codewars_test as test
+from solution import count_by
+
+@test.describe("Fixed Tests")
+def basic_tests():
+    @test.it("Fixed tests")
+    def fixed_tests():   
+        test.assert_equals(count_by(1, 5), [1, 2, 3, 4, 5])
+        test.assert_equals(count_by(2, 5), [2, 4, 6, 8, 10])
+        test.assert_equals(count_by(3, 5), [3, 6, 9, 12, 15])
+        test.assert_equals(count_by(50, 5), [50, 100, 150, 200, 250])
+        test.assert_equals(count_by(100, 5), [100, 200, 300, 400, 500])
