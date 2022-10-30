@@ -1,0 +1,36 @@
+
+We want an array, but not just any old array, an array with contents!
+
+Write a function that produces an array with the numbers 0 to N-1 in it.
+
+For example, the following code will result in an array containing 
+the numbers 0 to 4:
+
+arr(5) // => [0,1,2,3,4]
+Note: The parameter is optional. So you have to give it a default value.
+
+-----------------------------------------------------------------------
+
+Нам нужен массив, но не какой-нибудь старый массив, а массив с содержимым!
+
+Напишите функцию, которая создает массив с числами от 0 до N-1 в нем.
+
+Например, следующий код создаст массив, содержащий числа от 0 до 4:
+
+обр(5) // => [0,1,2,3,4]
+
+Примечание. Этот параметр является необязательным. Таким образом, 
+вы должны дать ему значение по умолчанию.
+
+-----------------------------------------------------------------------
+
+import codewars_test as test
+from solution import arr
+
+@test.describe("Basic Tests")
+def basic_tests():
+    @test.it('Basic Test Cases')
+    def basic_test_cases():
+        test.assert_equals(arr(4), [0,1,2,3])
+        test.assert_equals(arr(0), [])
+        test.assert_equals(arr(), [])
