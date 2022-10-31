@@ -1,0 +1,63 @@
+
+Story
+Ben has a very simple idea to make some profit: he buys 
+something and sells it again. Of course, this wouldn't 
+give him any profit at all if he was simply to buy and 
+sell it at the same price. Instead, he's going to buy 
+it for the lowest possible price and sell it at the highest.
+
+Task
+
+Write a function that returns both the minimum and maximum 
+number of the given list/array.
+
+Examples (Input --> Output)
+[1,2,3,4,5] --> [1,5]
+[2334454,5] --> [5,2334454]
+[1]         --> [1,1]
+
+Remarks
+
+All arrays or lists will always have at least one element, 
+so you don't need to check the length. Also, your function 
+will always get an array or a list, you don't have to check 
+for null, undefined or similar.
+
+-----------------------------------------------------------------------
+
+История
+У Бена есть очень простая идея, чтобы получить прибыль: он покупает
+что-то и продает это снова. Конечно, это не
+давать ему какую-либо прибыль, если он будет просто покупать и
+продать по той же цене. Вместо этого он купит
+его по самой низкой возможной цене и продать его по самой высокой.
+
+Задача
+
+Напишите функцию, которая возвращает минимум и максимум
+номер данного списка/массива.
+
+Примеры (ввод --> вывод)
+
+[1,2,3,4,5] --> [1,5]
+[2334454,5] --> [5,2334454]
+[1] --> [1,1]
+
+Примечания
+
+Все массивы или списки всегда будут иметь хотя бы один элемент,
+так что вам не нужно проверять длину. Кроме того, ваша функция
+всегда будет получать массив или список, вам не нужно проверять
+для нулевого, неопределенного или подобного.
+
+-----------------------------------------------------------------------
+
+import codewars_test as test
+from solution import min_max
+
+@test.describe("Fixed Tests")
+def fixed_tests():
+    @test.it('Basic Test Cases')
+    def basic_test_cases():
+        test.assert_equals(min_max([1,2,3,4,5]), [1, 5])
+        test.assert_equals(min_max([2334454,5]), [5, 2334454])
