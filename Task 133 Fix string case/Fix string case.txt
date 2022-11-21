@@ -1,0 +1,52 @@
+
+In this Kata, you will be given a string that 
+may have mixed uppercase and lowercase letters 
+and your task is to convert that string to either 
+lowercase only or uppercase only based on:
+
+make as few changes as possible.
+if the string contains equal number of uppercase 
+and lowercase letters, convert the string to lowercase.
+For example:
+
+solve("coDe") = "code". Lowercase characters > uppercase. Change only the "D" to lowercase.
+solve("CODe") = "CODE". Uppercase characters > lowecase. Change only the "e" to uppercase.
+solve("coDE") = "code". Upper == lowercase. Change all to lowercase.
+More examples in test cases. Good luck!
+
+Please also try:
+
+Simple time difference
+
+Simple remove duplicates
+
+-----------------------------------------------------------------------
+
+В этой Ката вам будет дана строка, которая
+могут быть смешанные прописные и строчные буквы
+и ваша задача состоит в том, чтобы преобразовать эту строку либо в
+только в нижнем регистре или только в верхнем регистре на основе:
+
+внести как можно меньше изменений.
+если строка содержит одинаковое количество заглавных букв
+и строчные буквы, преобразуйте строку в нижний регистр.
+Например:
+
+решить("код") = "код". Строчные символы> верхний регистр. Измените только «D» на нижний регистр.
+решить("КОД") = "КОД". Заглавные буквы > строчные. Измените только «е» на верхний регистр.
+решить("код") = "код". Верхний == нижний регистр. Перевести все в нижний регистр.
+Больше примеров в тестовых примерах. Удачи!
+
+Попробуйте также:
+
+Простая разница во времени
+
+Простое удаление дубликатов
+
+-----------------------------------------------------------------------
+
+test.it("Basic tests")
+test.assert_equals(solve("code"),"code")
+test.assert_equals(solve("CODe"),"CODE")
+test.assert_equals(solve("COde"),"code")
+test.assert_equals(solve("Code"),"code")
