@@ -1,0 +1,54 @@
+
+Write a function that takes a string of parentheses, 
+and determines if the order of the parentheses is valid. 
+The function should return true if the string is valid, and false if it's invalid.
+
+Examples
+"()"              =>  true
+")(()))"          =>  false
+"("               =>  false
+"(())((()())())"  =>  true
+
+Constraints
+0 <= input.length <= 100
+
+Along with opening (() and closing ()) parenthesis, 
+input may contain any valid ASCII characters. Furthermore, 
+the input string may be empty and/or not contain any parentheses at all. 
+Do not treat other forms of brackets as parentheses (e.g. [], {}, <>).
+
+-----------------------------------------------------------------------
+
+Напишите функцию, которая принимает строку скобок,
+и определяет, допустим ли порядок скобок.
+Функция должна возвращать true, если строка допустима, и false, 
+если она недействительна.
+
+Примеры
+"()" => верно
+")(()))" => ложь 
+"(" => ложь
+"(())((()())())" => верно
+
+Ограничения
+0 <= input.length <= 100
+
+Наряду с открывающей (() и закрывающей ()) скобкой,
+ввод может содержать любые допустимые символы ASCII. Более того,
+входная строка может быть пустой и/или вообще не содержать скобок.
+Не рассматривайте другие формы квадратных скобок как круглые (например, [], {}, <>).
+
+-----------------------------------------------------------------------
+
+import codewars_test as test
+from solution import valid_parentheses
+
+@test.describe("Sample Tests")
+def tests():
+    @test.it("Sample tests")
+    def sample_tests():
+        test.assert_equals(valid_parentheses("  ("),False, "should work for '  ('")
+        test.assert_equals(valid_parentheses(")test"),False, "should work for ')test'")
+        test.assert_equals(valid_parentheses(""),True, "should work for ''")
+        test.assert_equals(valid_parentheses("hi())("),False, "should work for 'hi())('")
+        test.assert_equals(valid_parentheses("hi(hi)()"),True, "should work for 'hi(hi)()'")
