@@ -1,0 +1,67 @@
+
+Snail Sort
+Given an n x n array, return the array elements arranged 
+from outermost elements to the middle element, traveling clockwise.
+
+array = [[1,2,3],
+         [4,5,6],
+         [7,8,9]]
+snail(array) #=> [1,2,3,6,9,8,7,4,5]
+For better understanding, please follow the 
+numbers of the next array consecutively:
+
+array = [[1,2,3],
+         [8,9,4],
+         [7,6,5]]
+snail(array) #=> [1,2,3,4,5,6,7,8,9]
+This image will illustrate things more clearly:
+
+
+NOTE: The idea is not sort the elements from the 
+lowest value to the highest; the idea is to 
+traverse the 2-d array in a clockwise snailshell pattern.
+
+NOTE 2: The 0x0 (empty matrix) is represented as 
+en empty array inside an array [[]].
+
+-----------------------------------------------------------------------
+
+Улитка
+Учитывая массив n x n, вернуть элементы массива, расположенные
+от крайних элементов к среднему элементу по часовой стрелке.
+
+массив = [[1,2,3],
+          [4,5,6],
+          [7,8,9]]
+улитка(массив) #=> [1,2,3,6,9,8,7,4,5]
+Для лучшего понимания следуйте
+номера следующего массива последовательно:
+
+массив = [[1,2,3],
+          [8,9,4],
+          [7,6,5]]
+улитка(массив) #=> [1,2,3,4,5,6,7,8,9]
+Это изображение проиллюстрирует ситуацию более четко:
+
+
+ПРИМЕЧАНИЕ. Идея не в том, чтобы сортировать элементы из
+от самого низкого значения к самому высокому; идея состоит в том, чтобы
+пройти по двумерному массиву по часовой стрелке.
+
+ПРИМЕЧАНИЕ 2: 0x0 (пустая матрица) представляется как
+en пустой массив внутри массива [[]].
+
+-----------------------------------------------------------------------
+
+array = [[1,2,3],
+         [4,5,6],
+         [7,8,9]]
+expected = [1,2,3,6,9,8,7,4,5]
+test.assert_equals(snail(array), expected)
+
+
+array = [[1,2,3],
+         [8,9,4],
+         [7,6,5]]
+expected = [1,2,3,4,5,6,7,8,9]
+test.assert_equals(snail(array), expected)
