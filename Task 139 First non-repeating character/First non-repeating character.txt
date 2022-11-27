@@ -1,0 +1,57 @@
+
+Write a function named first_non_repeating_letter that takes a 
+string input, and returns the first character that is not repeated 
+anywhere in the string.
+
+For example, if given the input 'stress', the function should 
+return 't', since the letter t only occurs once in the string, 
+and occurs first in the string.
+
+As an added challenge, upper- and lowercase letters are considered 
+the same character, but the function should return the correct case 
+for the initial letter. For example, the input 'sTreSS' should 
+return 'T'.
+
+If a string contains all repeating characters, it should return 
+an empty string ("") or None -- see sample tests.
+
+-----------------------------------------------------------------------
+
+Напишите функцию с именем first_non_repeating_letter, которая принимает
+строковый ввод и возвращает первый символ, который не повторяется
+в любом месте строки.
+
+Например, если задано входное значение «стресс», функция должна
+вернуть 't', так как буква t встречается в строке только один раз,
+и встречается первым в строке.
+
+В качестве дополнительной проблемы учитываются прописные и строчные буквы.
+тот же символ, но функция должна возвращать правильный регистр
+для начальной буквы. Например, ввод 'sTreSS' должен
+вернуть «Т».
+
+Если строка содержит все повторяющиеся символы, она должна вернуть
+пустая строка ("") или None — см. примеры тестов.
+
+-----------------------------------------------------------------------
+
+test.describe('Basic Tests')
+test.it('should handle simple tests')
+test.assert_equals(first_non_repeating_letter('a'), 'a')
+test.assert_equals(first_non_repeating_letter('stress'), 't')
+test.assert_equals(first_non_repeating_letter('moonmen'), 'e')
+
+test.it('should handle empty strings')
+test.assert_equals(first_non_repeating_letter(''), '')
+
+test.it('should handle all repeating strings') 
+test.assert_equals(first_non_repeating_letter('abba'), '')
+test.assert_equals(first_non_repeating_letter('aa'), '')
+
+test.it('should handle odd characters')
+test.assert_equals(first_non_repeating_letter('~><#~><'), '#')
+test.assert_equals(first_non_repeating_letter('hello world, eh?'), 'w')
+
+test.it('should handle letter cases')
+test.assert_equals(first_non_repeating_letter('sTreSS'), 'T')
+test.assert_equals(first_non_repeating_letter('Go hang a salami, I\'m a lasagna hog!'), ',')
