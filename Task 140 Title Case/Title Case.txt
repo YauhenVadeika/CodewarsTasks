@@ -1,0 +1,77 @@
+
+A string is considered to be in title case if each word in the string 
+is either (a) capitalised (that is, only the first letter of the word 
+is in upper case) or (b) considered to be an exception and put entirely 
+into lower case unless it is the first word, which is always capitalised.
+
+Write a function that will convert a string into title case, given an 
+optional list of exceptions (minor words). The list of minor words will 
+be given as a string with each word separated by a space. Your function 
+should ignore the case of the minor words string -- it should behave in 
+the same way even if the case of the minor word string is changed.
+
+Arguments (Haskell)
+First argument: space-delimited list of minor words that must always be 
+lowercase except for the first word in the string.
+Second argument: the original string to be converted.
+Arguments (Other languages)
+First argument (required): the original string to be converted.
+Second argument (optional): space-delimited list of minor words that 
+must always be lowercase except for the first word in the string. The 
+JavaScript/CoffeeScript tests will pass undefined when this argument is unused.
+
+Example
+title_case('a clash of KINGS', 'a an the of') # should return: 'A Clash of Kings'
+title_case('THE WIND IN THE WILLOWS', 'The In') # should return: 'The Wind in the Willows'
+title_case('the quick brown fox') # should return: 'The Quick Brown Fox'
+
+-----------------------------------------------------------------------
+
+Строка считается заглавной, если каждое слово в строке
+либо (а) пишется с большой буквы (то есть только первая буква слова
+пишется в верхнем регистре) или (b) считается исключением и ставится полностью
+в нижний регистр, если только это не первое слово, которое всегда пишется с большой буквы.
+
+Напишите функцию, которая будет преобразовывать 
+строку в заглавный регистр, учитывая
+необязательный список исключений (второстепенные слова). 
+Список второстепенных слов будет
+быть задан в виде строки, где каждое слово отделено пробелом. 
+Ваша функция
+следует игнорировать регистр второстепенных слов 
+строки - она ​​должна вести себя в
+таким же образом, даже если регистр строки младшего 
+слова изменен.
+
+Аргументы (Хаскель)
+Первый аргумент: разделенный пробелами список второстепенных 
+слов, которые всегда должны быть
+нижний регистр, кроме первого слова в строке.
+Второй аргумент: исходная строка для преобразования.
+Аргументы (другие языки)
+Первый аргумент (обязательный): исходная строка для преобразования.
+Второй аргумент (необязательный): список второстепенных 
+слов, разделенных пробелами.
+всегда должен быть в нижнем регистре, за исключением 
+первого слова в строке.
+Тесты JavaScript/CoffeeScript будут проходить как неопределенные, 
+если этот аргумент не используется.
+
+Пример
+title_case('столкновение королей', 'a an the of') # должен вернуть: 'Битва королей'
+title_case('ВЕТЕР В ВИВАХ', 'Внутри') # должно вернуть: 'Ветер в ивах'
+title_case('быстрая коричневая лиса') # должен вернуть: 'Быстрая коричневая лиса'
+
+-----------------------------------------------------------------------
+
+import codewars_test as test
+from solution import title_case
+
+@test.describe("Sample tests")
+def _():
+    @test.it("Tests")
+    def __():
+        test.assert_equals(title_case(''), '')
+        test.assert_equals(title_case('a clash of KINGS', 'a an the of'), 'A Clash of Kings')
+        test.assert_equals(title_case('THE WIND IN THE WILLOWS', 'The In'), 'The Wind in the Willows')
+        test.assert_equals(title_case('the quick brown fox'), 'The Quick Brown Fox')
