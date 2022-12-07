@@ -1,0 +1,36 @@
+
+This is the first step to understanding FizzBuzz.
+
+Your inputs: a positive integer, n, greater than or equal to one.
+ n is provided, you have NO CONTROL over its value.
+
+Your expected output is an array of positive 
+integers from 1 to n (inclusive).
+
+Your job is to write an algorithm that gets you from 
+the input to the output.
+
+-----------------------------------------------------------------------
+
+Это первый шаг к пониманию FizzBuzz.
+Ваши входные данные: положительное целое число, n, 
+больше или равное единице. n, у вас НЕТ КОНТРОЛЯ над его значением.
+Ожидаемый результат — массив положительных целых 
+чисел от 1 до n (включительно).
+Ваша задача — написать алгоритм, который приведет 
+вас от входа к выходу.
+
+-----------------------------------------------------------------------
+
+import codewars_test as test
+from solution import pre_fizz
+
+@test.describe("Fixed Tests")
+def fixed_tests():
+    @test.it('Basic Test Cases')
+    def basic_test_cases():
+        test.assert_equals(pre_fizz(1), [1])
+        test.assert_equals(pre_fizz(2), [1,2])
+        test.assert_equals(pre_fizz(3), [1,2,3])
+        test.assert_equals(pre_fizz(4), [1,2,3,4])
+        test.assert_equals(pre_fizz(5), [1,2,3,4,5])
