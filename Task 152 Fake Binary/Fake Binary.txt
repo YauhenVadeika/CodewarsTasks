@@ -1,0 +1,32 @@
+
+Given a string of digits, you should replace any digit below 5 with '0' 
+and any digit 5 and above with '1'. Return the resulting string.
+
+Note: input will never be an empty string
+
+-----------------------------------------------------------------------
+
+Учитывая строку цифр, вы должны заменить любую цифру ниже 5 на «0».
+и любая цифра 5 и выше с «1». Верните полученную строку.
+
+Примечание: ввод никогда не будет пустой строкой
+-----------------------------------------------------------------------
+
+import codewars_test as test
+from solution import fake_bin
+
+@test.describe("Fixed Tests")
+def fixed_tests():
+    @test.it('Basic Test Cases')
+    def basic_test_cases():
+        tests = [
+            # [expected, input]
+            ["01011110001100111", "45385593107843568"],
+            ["101000111101101", "509321967506747"],
+            ["011011110000101010000011011", "366058562030849490134388085"],
+            ["01111100", "15889923"],
+            ["100111001111", "800857237867"],
+        ]
+        
+        for exp, inp in tests:
+            test.assert_equals(fake_bin(inp), exp)
