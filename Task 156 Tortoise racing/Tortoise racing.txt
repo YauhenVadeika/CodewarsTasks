@@ -1,0 +1,99 @@
+
+Two tortoises named A and B must run a race. 
+A starts with an average speed of 720 feet per hour. 
+Young B knows she runs faster than A, and furthermore has not finished her cabbage.
+
+When she starts, at last, she can see that 
+A has a 70 feet lead but B's speed is 850 feet per hour. 
+How long will it take B to catch A?
+
+More generally: given two speeds v1 
+(A's speed, integer > 0) and 
+v2 (B's speed, integer > 0) and 
+a lead g (integer > 0) how long will it take B to catch A?
+
+The result will be an array [hour, min, sec] 
+which is the time needed in hours, minutes and 
+seconds (round down to the nearest second) 
+or a string in some languages.
+
+If v1 >= v2 then return nil, nothing, null, 
+None or {-1, -1, -1} for C++, C, Go, Nim, 
+Pascal, COBOL, Erlang, [-1, -1, -1] for Perl,[] for Kotlin or "-1 -1 -1".
+
+
+Examples:
+(form of the result depends on the language)
+
+race(720, 850, 70) => [0, 32, 18] or "0 32 18"
+race(80, 91, 37)   => [3, 21, 49] or "3 21 49"
+Note:
+See other examples in "Your test cases".
+
+In Fortran - as in any other language - the returned 
+string is not permitted to contain any redundant trailing 
+whitespace: you can use dynamically allocated character strings.
+
+** Hints for people who don't know how to convert to hours, minutes, seconds:
+
+Tortoises don't care about fractions of seconds
+Think of calculation by hand using only integers (in your code use or simulate integer division)
+or Google: "convert decimal time to hours minutes seconds"
+
+-----------------------------------------------------------------------
+
+Две черепахи по имени A и B должны участвовать в гонке.
+А стартует со средней скоростью 720 футов в час.
+Юная Б знает, что она бегает быстрее, чем А, и, кроме того, еще не доела капусту.
+
+Когда она начинает, наконец, она может видеть, что
+А имеет преимущество в 70 футов, но скорость В составляет 850 футов в час.
+Сколько времени понадобится В, чтобы догнать А?
+
+В более общем смысле: при двух скоростях v1
+(скорость A, целое число > 0) и
+v2 (скорость B, целое число > 0) и
+упреждение g (целое число > 0) сколько времени потребуется B, чтобы догнать A?
+
+Результатом будет массив [час, мин, сек]
+это время, необходимое в часах, минутах и
+секунд (округлить до ближайшей секунды)
+или строка на некоторых языках.
+
+Если v1 >= v2, то вернуть nil, ничего, null,
+Нет или {-1, -1, -1} для C++, C, Go, Nim,
+Pascal, COBOL, Erlang, [-1, -1, -1] для Perl, [] для Kotlin или "-1 -1 -1".
+
+
+Примеры:
+(форма результата зависит от языка)
+
+раса(720, 850, 70) => [0, 32, 18] или "0 32 18"
+раса(80, 91, 37) => [3, 21, 49] или "3 21 49"
+Примечание:
+См. другие примеры в разделе "Ваши тестовые примеры".
+
+В Фортране, как и в любом другом языке, возвращаемое значение
+строка не может содержать лишнее в конце
+пробел: вы можете использовать динамически выделяемые строки символов.
+
+** Советы для тех, кто не знает, как перевести часы, минуты, секунды:
+
+Черепахам плевать на доли секунд
+Подумайте о вычислении вручную, используя только целые числа 
+(в вашем коде используйте или имитируйте целочисленное деление)
+или Google: "перевести десятичное время в часы минуты секунды"
+
+-----------------------------------------------------------------------
+
+import codewars_test as test
+
+@test.describe("race")
+def tests():
+    @test.it("basic tests")
+    def basics():
+        test.assert_equals(race(720, 850, 70), [0, 32, 18])
+        test.assert_equals(race(80, 91, 37), [3, 21, 49])
+        test.assert_equals(race(820, 81, 550), None) 
+
+-----------------------------------------------------------------------
