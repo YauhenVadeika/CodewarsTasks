@@ -1,0 +1,86 @@
+
+Scenario
+Several people are standing in a row divided into two teams.
+The first person goes into team 1, the second goes into team 2, the third goes into team 1, and so on.
+
+Task
+Given an array of positive integers (the weights of the people), return a new array/tuple of two integers, where the first one is the total weight of team 1, and the second one is the total weight of team 2.
+
+Notes
+Array size is at least 1.
+All numbers will be positive.
+Input >> Output Examples
+rowWeights([13, 27, 49])  ==>  return (62, 27)
+Explanation:
+The first element 62 is the total weight of team 1, and the second element 27 is the total weight of team 2.
+
+rowWeights([50, 60, 70, 80])  ==>  return (120, 140)
+Explanation:
+The first element 120 is the total weight of team 1, and the second element 140 is the total weight of team 2.
+
+rowWeights([80])  ==>  return (80, 0)
+Explanation:
+The first element 80 is the total weight of team 1, and the second element 0 is the total weight of team 2.
+
+Playing with Numbers Series
+Playing With Lists/Arrays Series
+For More Enjoyable Katas
+ALL translations are welcomed
+Enjoy Learning !!
+Zizou
+
+
+-----------------------------------------------------------------------
+
+Сценарий
+Несколько человек стоят в ряд, разделившись на две команды.
+Первый человек входит в первую команду, второй — во вторую, третий — в первую и так далее.
+
+Задача
+Учитывая массив положительных целых чисел (веса людей), верните новый массив/кортеж из двух целых чисел, где первое — это общий вес команды 1, а второе — общий вес команды 2.
+
+Заметки
+Размер массива не менее 1.
+Все числа будут положительными.
+Ввод >> Примеры вывода
+rowWeights([13, 27, 49]) ==> вернуть (62, 27)
+Объяснение:
+Первый элемент 62 — это общий вес команды 1, а второй элемент 27 — общий вес команды 2.
+
+rowWeights([50, 60, 70, 80]) ==> return (120, 140)
+Объяснение:
+Первый элемент 120 — это общий вес команды 1, а второй элемент 140 — общий вес команды 2.
+
+rowWeights([80]) ==> вернуть (80, 0)
+Объяснение:
+Первый элемент 80 — это общий вес команды 1, 
+а второй элемент 0 — это общий вес команды 2.
+
+Игра с числами
+Игра со списками/массивами
+Для более приятных ката
+ВСЕ переводы приветствуются
+Наслаждайтесь обучением !!
+Зизу
+
+-----------------------------------------------------------------------
+
+import codewars_test as test
+from solution import row_weights
+
+@test.describe("Fixed Tests")
+def fixed_tests():
+    @test.it('Basic Test Cases')
+    def basic_test_cases():
+        test.assert_equals(row_weights([80]), (80,0))
+        test.assert_equals(row_weights([100,50]), (100,50))
+        test.assert_equals(row_weights([50,60,70,80]), (120,140))
+        test.assert_equals(row_weights([13,27,49]), (62,27))
+        test.assert_equals(row_weights([70,58,75,34,91]), (236,92))
+        test.assert_equals(row_weights([29,83,67,53,19,28,96]), (211,164))
+        test.assert_equals(row_weights([0]), (0,0))
+        test.assert_equals(row_weights([100,51,50,100]), (150,151))
+        test.assert_equals(row_weights([39,84,74,18,59,72,35,61]), (207,235))
+        test.assert_equals(row_weights([0,1,0]), (0,1))
+
+-----------------------------------------------------------------------
