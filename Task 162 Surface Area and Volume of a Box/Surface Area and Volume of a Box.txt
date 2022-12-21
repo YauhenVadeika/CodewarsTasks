@@ -1,0 +1,24 @@
+
+Write a function that returns the total surface area and volume of a box as an array: [area, volume]
+
+-----------------------------------------------------------------------
+
+Напишите функцию, которая возвращает общую площадь 
+поверхности и объем коробки в виде массива: [площадь, объем]
+
+-----------------------------------------------------------------------
+
+import codewars_test as test
+from solution import get_size
+
+@test.describe("Fixed Tests")
+def fixed_tests():
+    @test.it('Basic Test Cases')
+    def basic_test_cases():
+        test.assert_equals(get_size(4, 2, 6), [88,48])
+        test.assert_equals(get_size(1, 1, 1), [6,1])
+        test.assert_equals(get_size(1, 2, 1), [10,2])
+        test.assert_equals(get_size(1, 2, 2), [16,4])
+        test.assert_equals(get_size(10, 10, 10), [600,1000])
+
+-----------------------------------------------------------------------
