@@ -1,0 +1,45 @@
+
+In this kata you have to create all permutations of a non empty input string and remove duplicates, if present. This means, you have to shuffle all letters from the input in all possible orders.
+
+Examples:
+
+* With input 'a'
+* Your function should return: ['a']
+* With input 'ab'
+* Your function should return ['ab', 'ba']
+* With input 'aabb'
+* Your function should return ['aabb', 'abab', 'abba', 'baab', 'baba', 'bbaa']
+The order of the permutations doesn't matter.
+
+-----------------------------------------------------------------------
+
+В этом ката вы должны создать все перестановки непустой входной 
+строки и удалить дубликаты, если они есть. 
+Это означает, что вы должны перетасовать все буквы из ввода 
+во всех возможных порядках.
+
+Примеры:
+
+* С вводом «а»
+* Ваша функция должна вернуть: ['a']
+* С вводом «ab»
+* Ваша функция должна возвращать ['ab', 'ba']
+* С вводом 'aabb'
+* Ваша функция должна возвращать ['aabb', 'abab', 'abba', 'baab', 'baba', 'bbaa']
+Порядок перестановок не имеет значения.
+
+-----------------------------------------------------------------------
+
+import codewars_test as test
+from solution import permutations
+
+@test.describe("Basic Tests")
+def basic_tests():
+    
+    @test.it("Basic Tests")
+    def basic_tests():
+        test.assert_equals(sorted(permutations('a')), ['a']);
+        test.assert_equals(sorted(permutations('ab')), ['ab', 'ba'])
+        test.assert_equals(sorted(permutations('aabb')), ['aabb', 'abab', 'abba', 'baab', 'baba', 'bbaa'])
+
+-----------------------------------------------------------------------
