@@ -1,0 +1,65 @@
+
+Complete the solution so that it strips all text that follows 
+any of a set of comment markers passed in. Any whitespace at 
+the end of the line should also be stripped out.
+
+Example:
+
+Given an input string of:
+
+apples, pears # and bananas
+grapes
+bananas !apples
+The output expected would be:
+
+apples, pears
+grapes
+bananas
+The code would be called like so:
+
+result = solution("apples, pears # and bananas\ngrapes\nbananas !apples", ["#", "!"])
+# result should == "apples, pears\ngrapes\nbananas"
+
+
+-----------------------------------------------------------------------
+
+Завершите решение, чтобы оно удалило весь следующий за ним текст.
+любой из переданных маркеров комментария. Любые пробелы в
+конец строки также должен быть зачищен.
+
+Пример:
+
+Учитывая входную строку:
+
+яблоки, груши # и бананы
+виноград
+бананы !яблоки
+Ожидаемый результат будет следующим:
+
+яблоки, груши
+виноград
+бананы
+Код будет называться так:
+
+результат = решение("яблоки, груши # и бананы\ngrapes\nбананы !яблоки", ["#", "!"])
+# результат должен == "яблоки, груши\nвиноград\nбананы"
+
+-----------------------------------------------------------------------
+
+import codewars_test as test
+try:
+    from solution import solution
+except ImportError:
+    from solution import strip_comments
+    solution = strip_comments
+
+
+@test.describe('Test case')
+def test_group():
+    @test.it('Example')
+    def test_case():
+        test.assert_equals(solution('apples, pears # and bananas\ngrapes\nbananas !apples', ['#', '!']), 'apples, pears\ngrapes\nbananas')
+        test.assert_equals(solution('a #b\nc\nd $e f g', ['#', '$']), 'a\nc\nd')
+        test.assert_equals(solution(' a #b\nc\nd $e f g', ['#', '$']), ' a\nc\nd')
+
+-----------------------------------------------------------------------
