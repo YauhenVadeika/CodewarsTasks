@@ -1,0 +1,71 @@
+
+ask:
+Write a function that accepts two integers and returns the remainder of dividing the larger value by the smaller value.
+
+Division by zero should return an empty value.
+
+Examples:
+n = 17
+m = 5
+result = 2 (remainder of `17 / 5`)
+
+n = 13
+m = 72
+result = 7 (remainder of `72 / 13`)
+
+n = 0
+m = -1
+result = 0 (remainder of `0 / -1`)
+
+n = 0
+m = 1
+result - division by zero (refer to the specifications on how to handle this in your languag
+
+
+-----------------------------------------------------------------------
+
+просить:
+Напишите функцию, которая принимает два целых числа и возвращает остаток 
+от деления большего значения на меньшее.
+
+Деление на ноль должно возвращать пустое значение.
+
+Примеры:
+п = 17
+м = 5
+результат = 2 (остаток от `17/5`)
+
+п = 13
+м = 72
+результат = 7 (остаток `72/13`)
+
+п = 0
+м = -1
+результат = 0 (остаток от `0/-1`)
+
+п = 0
+м = 1
+результат - деление на ноль (обратитесь к спецификациям, 
+как обрабатывать это в вашем языке
+
+-----------------------------------------------------------------------
+
+import codewars_test as test
+from solution import remainder
+
+@test.describe("Sample test cases")
+def basic():
+    @test.it("Basic tests")
+    def _():
+        test.assert_equals(remainder(17,5), 2, 'Returned value should be the value left over after dividing as much as possible.')
+        test.assert_equals(remainder(13, 72), remainder(72, 13), 'The order the arguments are passed should not matter.')
+        test.assert_equals(remainder(1, 0), None, 'Divide by zero should return None')
+        test.assert_equals(remainder(0, 0), None, 'Divide by zero should return None')
+        test.assert_equals(remainder(0, 1), None, 'Divide by zero should return None')
+        test.assert_equals(remainder(-1, 0), 0, 'Divide by zero should only be checked for the lowest number')
+        test.assert_equals(remainder(0, -1), 0, 'Divide by zero should only be checked for the lowest number')
+        test.assert_equals(remainder(-13, -13), 0, 'Should handle negative numbers')
+        test.assert_equals(remainder(-60, 340), -20, 'Should handle negative numbers')
+        test.assert_equals(remainder(60, -40), -20, 'Should handle negative numbers')
+
+-----------------------------------------------------------------------
