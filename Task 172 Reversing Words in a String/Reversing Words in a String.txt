@@ -1,0 +1,40 @@
+
+You need to write a function that reverses the words in a given string. 
+A word can also fit an empty string. If this is not clear enough, here are some examples:
+
+As the input may have trailing spaces, you will also need to ignore unneccesary whitespace.
+
+Example (Input --> Output)
+
+"Hello World" --> "World Hello"
+"Hi There." --> "There. Hi"
+Happy coding!
+
+-----------------------------------------------------------------------
+
+Вам нужно написать функцию, которая переворачивает слова в заданной строке.
+Слово также может соответствовать пустой строке. 
+Если это недостаточно ясно, вот несколько примеров:
+
+Поскольку ввод может содержать пробелы в конце, вам также 
+необходимо игнорировать ненужные пробелы.
+
+Пример (ввод --> вывод)
+
+"Привет, мир" --> "Привет, мир"
+"Всем привет." --> "Вот. Привет"
+Удачного кодирования!
+
+-----------------------------------------------------------------------
+
+import codewars_test as test
+from solution import reverse
+
+@test.describe("Fixed Tests")
+def fixed_tests():
+    @test.it('Basic Test Cases')
+    def basic_test_cases():
+        test.assert_equals(reverse('Hello World'), 'World Hello')
+        test.assert_equals(reverse('Hi There.'), 'There. Hi')
+
+-----------------------------------------------------------------------
