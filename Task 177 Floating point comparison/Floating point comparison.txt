@@ -1,0 +1,96 @@
+
+Introduction
+floats have limited precision and are unable to exactly represent some values. 
+Rounding errors accumulate with repeated computation, and numbers expected 
+to be equal often differ slightly.
+
+As a result, it is common advice to not use an exact equality comparison (==) with floats.
+
+>>> a, b, c = 1e-9, 1e-9, 3.33e7
+>>> (a + b) + c == a + (b + c)
+False
+
+>>> 0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1 == 1.0
+False
+The solution is to check if a computed value is close to an expected value, 
+without requiring them to be exactly equal. It seems very easy, but many 
+katas test float results the wrong way.
+
+Task
+You have:
+
+a float value that comes from a computation and may have accumulated errors up to ±0.001
+a reference value
+a function approx_equals that compare the two values taking into account loss of precision; 
+the function should return True if and only if the two values are close to each other, 
+the maximum allowed difference is 0.001
+The function is bugged and sometimes returns wrong results.
+
+Your task is to correct the bug.
+
+Note
+This kata uses fixed tolerance for simplicity reasons, but usually relative tolerance is better. 
+Fixed tolerance is useful for comparisons near zero or when the magnitude of the values is known.
+
+-----------------------------------------------------------------------
+
+Вступление
+float имеют ограниченную точность и не могут точно представлять некоторые значения.
+Ошибки округления накапливаются при повторных вычислениях, и ожидаемые числа
+чтобы быть равными, часто немного отличаются.
+
+В результате часто рекомендуется не использовать точное сравнение на 
+равенство (==) с числами с плавающей запятой.
+
+>>> а, б, с = 1е-9, 1е-9, 3.33е7
+>>> (а + б) + с == а + (б + с)
+ЛОЖЬ
+
+>>> 0,1 + 0,1 + 0,1 + 0,1 + 0,1 + 0,1 + 0,1 + 0,1 + 0,1 + 0,1 == 1,0
+ЛОЖЬ
+Решение состоит в том, чтобы проверить, близко ли вычисленное значение к 
+ожидаемому значению,
+не требуя, чтобы они были точно равны. Это кажется очень простым, 
+но многие
+katas test float дает неверный результат.
+
+Задача
+У тебя есть:
+
+значение с плавающей запятой, полученное в результате вычислений и 
+может иметь накопленные ошибки до ± 0,001.
+эталонное значение
+функция приблизительно_равна, которая сравнивает два значения с учетом потери точности;
+функция должна возвращать True тогда и только тогда, когда два значения близки друг к другу,
+максимально допустимая разница составляет 0,001
+Функция глючит и иногда возвращает неправильные результаты.
+
+Ваша задача — исправить ошибку.
+
+Запись
+В этом ката для простоты используется фиксированная толерантность, 
+но обычно относительная толерантность лучше.
+Фиксированный допуск полезен для сравнений, близких к нулю, или когда величина значений известна.
+
+-----------------------------------------------------------------------
+
+from solution import approx_equals
+import codewars_test as test
+
+@test.describe('Fixed tests')
+def fixed_tests():
+    data = (
+        (175.9827, 82.25, False),
+        (-156.24037, -156.24038, True),
+        (123.2345, 123.234501, True),
+        (1456.3652, 1456.3641, False),
+        (-1.234, -1.233999, True),
+        (98.7655, 98.7654999, True),
+        (-7.28495, -7.28596, False))
+
+    @test.it('testing approx_equals')
+    def tests():
+        for (a, b, eq) in data:
+            test.assert_equals(approx_equals(a, b), eq)
+
+-----------------------------------------------------------------------
