@@ -1,0 +1,41 @@
+
+Story
+Your online store likes to give out coupons for special occasions. 
+Some customers try to cheat the system by entering invalid codes or using expired coupons.
+
+Task
+Your mission:
+Write a function called checkCoupon which verifies that a coupon code is valid and not expired.
+
+A coupon is no more valid on the day AFTER the expiration date. 
+All dates will be passed as strings in this format: "MONTH DATE, YEAR".
+
+Examples:
+checkCoupon("123", "123", "July 9, 2015", "July 9, 2015")  == True
+checkCoupon("123", "123", "July 9, 2015", "July 2, 2015")  == False
+
+-----------------------------------------------------------------------
+
+История
+Ваш интернет-магазин любит раздавать купоны для особых случаев.
+Некоторые клиенты пытаются обмануть систему, вводя неверные коды или используя купоны 
+с истекшим сроком действия.
+
+Задача
+Ваша миссия:
+Напишите функцию с именем checkCoupon, которая проверяет, 
+что код купона действителен и срок его действия не истек.
+
+Купон перестает быть действительным на следующий день ПОСЛЕ истечения срока действия.
+Все даты будут переданы в виде строк в следующем формате: "ДАТА МЕСЯЦА, ГОД".
+
+Примеры:
+checkCoupon("123", "123", "9 июля 2015 г.", "9 июля 2015 г.") == True
+checkCoupon("123", "123", "9 июля 2015 г.", "2 июля 2015 г.") == False
+
+-----------------------------------------------------------------------
+
+test.assert_equals(check_coupon('123','123','September 5, 2014','October 1, 2014'), True);
+test.assert_equals(check_coupon('123a','123','September 5, 2014','October 1, 2014'), False);
+
+-----------------------------------------------------------------------
