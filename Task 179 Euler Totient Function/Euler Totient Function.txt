@@ -1,0 +1,99 @@
+
+In number theory, Euler's totient is an arithmetic function, introduced in 1763 by Euler, 
+that counts the positive integers less than or equal to n that are relatively prime to n. 
+Thus, if n is a positive integer, then φ(n), notation introduced by Gauss in 1801, 
+is the number of positive integers k ≤ n for which gcd(n, k) = 1.
+The totient function is important in number theory, 
+mainly because it gives the order of the multiplicative group of integers modulo n. 
+The totient function also plays a key role in the definition of the RSA encryption system.
+
+For example let n = 9.
+Then gcd(9, 3) = gcd(9, 6) = 3 and gcd(9, 9) = 9.
+The other six numbers in the range 1 ≤ k ≤ 9 i.e. 1, 2, 4, 5, 7, 8 are relatively prime to 9.
+Therefore, φ(9) = 6.
+As another example, φ(1) = 1 since gcd(1, 1) = 1.
+
+There are generally two approaches to this function:
+
+Iteratively counting the numbers k ≤ n such that gcd(n,k) = 1.
+
+Using the Euler product formula.
+This is an explicit formula for calculating φ(n) depending on the prime divisor of n:
+φ(n) = n * Product (1 - 1/p) where the product is taken over the primes p ≤ n that divide n.
+For example: φ(36) = 36 * (1 - 1/2) * (1 - 1/3) = 36 * 1/2 * 2/3 = 12.
+This second method seems more complex and not likely to be faster, but in practice we will often look for φ(n) with n prime. It correctly gives φ(n) = n - 1 if n is prime.
+
+You have to code the Euler totient function, that takes an integer 1 ≤ n as input and returns φ(n).
+
+You do have to check if n is a number, is an integer and that 1 ≤ n; if that is not the case, 
+the function should return 0.
+
+Input range: 1 ≤ n ≤ 1e10
+
+-----------------------------------------------------------------------
+
+В теории чисел тотиент Эйлера - это арифметическая функция, 
+введенная Эйлером в 1763 году.
+который подсчитывает положительные целые числа, меньшие или равные n, 
+которые взаимно просты с n.
+Таким образом, если n — натуральное число, то φ(n), обозначение, 
+введенное Гауссом в 1801 г.,
+количество положительных целых чисел k ≤ n, для которых gcd(n, k) = 1.
+Функция totient важна в теории чисел,
+главным образом потому, что он дает порядок мультипликативной 
+группы целых чисел по модулю n.
+Функция totient также играет ключевую роль 
+в определении системы шифрования RSA.
+
+Например, пусть n = 9.
+Тогда НОД(9, 3) = НОД(9, 6) = 3 и НОД(9, 9) = 9.
+Остальные шесть чисел в диапазоне 1 ≤ k ≤ 9, то есть 1, 2, 4, 5, 7, 8 
+взаимно просты с 9.
+Следовательно, ф(9) = 6.
+Другой пример: φ(1) = 1, поскольку gcd(1, 1) = 1.
+
+Обычно существует два подхода к этой функции:
+
+Итеративный подсчет чисел k ≤ n таких, что gcd(n,k) = 1.
+
+Используя формулу произведения Эйлера.
+Это явная формула для вычисления φ(n) в зависимости от простого делителя n:
+φ(n) = n * Произведение (1 - 1/p), где произведение берется 
+по простым числам p ≤ n, которые делят n.
+Например: φ(36) = 36 * (1 - 1/2) * (1 - 1/3) = 36 * 1/2 * 2/3 = 12.
+Этот второй метод кажется более сложным и вряд ли будет быстрее, 
+но на практике мы часто будем искать φ(n) с простым числом n. 
+Это правильно дает φ (n) = n - 1, если n простое число.
+
+Вы должны закодировать функцию Эйлера totient, 
+которая принимает целое число 1 ≤ n в качестве входных 
+данных и возвращает φ (n).
+
+Вы должны проверить, является ли n числом, 
+целым числом и что 1 ≤ n; если это не так,
+функция должна вернуть 0.
+
+Диапазон ввода: 1 ≤ n ≤ 1e10
+
+-----------------------------------------------------------------------
+
+@test.describe("Basic tests")
+def basic_tests():
+    test.assert_equals(totient(1), 1)
+    test.assert_equals(totient(7), 6)
+    test.assert_equals(totient(9), 6)
+    
+
+@test.describe("Tests for larger values")
+def tests_for_larger_values():
+    test.assert_equals(totient(983), 982)
+    test.assert_equals(totient(1601), 1600)
+    test.assert_equals(totient(9999999985), 7849056384)
+    
+    
+@test.describe("Error handling")
+def tests_for_wrong_inputs():
+    test.assert_equals(totient('a'), 0)
+    test.assert_equals(totient(-1), 0)
+    test.assert_equals(totient(None), 0)
+-----------------------------------------------------------------------
