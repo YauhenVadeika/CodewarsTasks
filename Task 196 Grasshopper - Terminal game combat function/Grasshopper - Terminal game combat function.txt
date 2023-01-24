@@ -1,0 +1,25 @@
+
+Create a combat function that takes the player's current 
+health and the amount of damage recieved, and returns 
+the player's new health. Health can't be less than 0.
+
+-----------------------------------------------------------------------
+
+Создайте боевую функцию, которая принимает текущее состояние игрока.
+здоровье и количество полученного урона, и отдача
+новое здоровье игрока. Здоровье не может быть меньше 0.
+
+-----------------------------------------------------------------------
+
+import codewars_test as test
+from solution import combat
+
+@test.describe("Fixed Tests")
+def fixed_tests():
+    @test.it('Basic Test Cases')
+    def basic_test_cases():        
+        test.assert_equals(combat(100, 5), 95)
+        test.assert_equals(combat(83, 16), 67)
+        test.assert_equals(combat(20, 30), 0)
+
+-----------------------------------------------------------------------
