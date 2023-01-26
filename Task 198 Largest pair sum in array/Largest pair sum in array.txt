@@ -1,0 +1,34 @@
+
+Given a sequence of numbers, find the largest pair sum in the sequence.
+
+For example
+
+[10, 14, 2, 23, 19] -->  42 (= 23 + 19)
+[99, 2, 2, 23, 19]  --> 122 (= 99 + 23)
+Input sequence contains minimum two elements and every element is an integer.
+
+-----------------------------------------------------------------------
+
+Дана последовательность чисел, найти наибольшую сумму пар в последовательности.
+
+Например
+
+[10, 14, 2, 23, 19] --> 42 (= 23 + 19)
+[99, 2, 2, 23, 19] --> 122 (= 99 + 23)
+Входная последовательность содержит как минимум два элемента, и каждый элемент является целым числом.
+
+-----------------------------------------------------------------------
+
+import codewars_test as test
+from solution import largest_pair_sum
+
+@test.describe("Fixed Tests")
+def fixed_tests():
+    @test.it('Basic Test Cases')
+    def basic_test_cases():
+        test.assert_equals(largest_pair_sum([10,14,2,23,19]), 42)
+        test.assert_equals(largest_pair_sum([-100,-29,-24,-19,19]), 0)
+        test.assert_equals(largest_pair_sum([1,2,3,4,6,-1,2]), 10)
+        test.assert_equals(largest_pair_sum([-10, -8, -16, -18, -19]), -18)
+
+-----------------------------------------------------------------------
