@@ -1,0 +1,50 @@
+
+Given two numbers and an arithmetic operator (the name of it, as a string), 
+return the result of the two numbers having that operator used on them.
+
+a and b will both be positive integers, and a will always 
+be the first number in the operation, and b always the second.
+
+The four operators are "add", "subtract", "divide", "multiply".
+
+A few examples:(Input1, Input2, Input3 --> Output)
+
+5, 2, "add"      --> 7
+5, 2, "subtract" --> 3
+5, 2, "multiply" --> 10
+5, 2, "divide"   --> 2.5
+Try to do it without using if statements!
+
+-----------------------------------------------------------------------
+
+Учитывая два числа и арифметический оператор (его имя в виде строки),
+вернуть результат двух чисел, к которым был применен этот оператор.
+
+a и b будут оба положительными целыми числами, и a всегда будет
+быть первым числом в операции, а b всегда вторым.
+
+Четыре оператора: «сложить», «вычесть», «делить», «умножить».
+
+Несколько примеров: (Ввод1, Ввод2, Ввод3 --> Вывод)
+
+5, 2, "добавить" --> 7
+5, 2, "вычесть" --> 3
+5, 2, "умножить" --> 10
+5, 2, "делить" --> 2,5
+Попробуйте сделать это без использования операторов if!
+
+-----------------------------------------------------------------------
+
+import codewars_test as test
+from solution import arithmetic
+
+@test.describe("Fixed Tests")
+def fixed_tests():
+    @test.it('Basic Test Cases')
+    def basic_test_cases():
+        test.assert_equals(arithmetic(1, 2, "add"), 3, "'add' should return the two numbers added together!")
+        test.assert_equals(arithmetic(8, 2, "subtract"), 6, "'subtract' should return a minus b!")
+        test.assert_equals(arithmetic(5, 2, "multiply"), 10, "'multiply' should return a multiplied by b!")
+        test.assert_equals(arithmetic(8, 2, "divide"), 4, "'divide' should return a divided by b!")
+
+-----------------------------------------------------------------------
