@@ -1,0 +1,75 @@
+
+Given an integer as input, can you round it to the next 
+(meaning, "greater than or equal") multiple of 5?
+
+Examples:
+
+input:    output:
+0    ->   0
+2    ->   5
+3    ->   5
+12   ->   15
+21   ->   25
+30   ->   30
+-2   ->   0
+-5   ->   -5
+etc.
+Input may be any positive or negative integer (including 0).
+
+You can assume that all inputs are valid integers.
+
+-----------------------------------------------------------------------
+
+Учитывая целое число в качестве входных данных, можете 
+ли вы округлить его до следующего
+(имеется в виду «больше или равно»), кратному 5?
+
+Примеры:
+
+ввод, вывод:
+0 -> 0
+2 -> 5
+3 -> 5
+12 -> 15
+21 -> 25
+30 -> 30
+-2 -> 0
+-5 -> -5
+и т. д.
+Входными данными могут быть любые положительные 
+или отрицательные целые числа (включая 0).
+
+Вы можете предположить, что все входные данные 
+являются допустимыми целыми числами.
+
+-----------------------------------------------------------------------
+
+inp = 0
+out = round_to_next5(inp)
+test.assert_equals(out, 0, "Input: {}".format(inp))
+
+inp = 1
+out = round_to_next5(inp)
+test.assert_equals(out, 5, "Input: {}".format(inp))
+
+inp = -1
+out = round_to_next5(inp)
+test.assert_equals(out, 0, "Input: {}".format(inp))
+
+inp = 5
+out = round_to_next5(inp)
+test.assert_equals(out, 5, "Input: {}".format(inp))
+
+inp = 7
+out = round_to_next5(inp)
+test.assert_equals(out, 10, "Input: {}".format(inp))
+
+inp = 20
+out = round_to_next5(inp)
+test.assert_equals(out, 20, "Input: {}".format(inp))
+
+inp = 39
+out = round_to_next5(inp)
+test.assert_equals(out, 40, "Input: {}".format(inp))
+
+-----------------------------------------------------------------------
