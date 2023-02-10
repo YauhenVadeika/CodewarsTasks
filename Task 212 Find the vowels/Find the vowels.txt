@@ -1,0 +1,40 @@
+
+We want to know the index of the vowels in a given word, for example, there are two vowels in the word super (the second and fourth letters).
+
+So given a string "super", we should return a list of [2, 4].
+
+Some examples:
+Mmmm  => []
+Super => [2,4]
+Apple => [1,5]
+YoMama -> [1,2,4,6]
+NOTES
+Vowels in this context refers to: a e i o u y (including upper case)
+This is indexed from [1..n] (not zero indexed!)
+
+-----------------------------------------------------------------------
+
+Мы хотим знать индекс гласных в данном слове, например, 
+в слове супер две гласные (вторая и четвертая буквы).
+
+Таким образом, учитывая строку «супер», мы должны вернуть список из [2, 4].
+
+Некоторые примеры:
+Мммм => []
+Супер => [2,4]
+Яблоко => [1,5]
+Йомама -> [1,2,4,6]
+ПРИМЕЧАНИЯ
+Гласные в этом контексте относятся к: a e i o u y (включая верхний регистр)
+Это индексируется от [1..n] (не нулевой индекс!).
+
+-----------------------------------------------------------------------
+
+@test.describe("Fixed Tests")
+def basic_tests():
+    test.assert_equals(vowel_indices("mmm"), [], "failed on the word 'mmm'")
+    test.assert_equals(vowel_indices("apple"), [1,5], "failed on the word 'apple'")
+    test.assert_equals(vowel_indices("123456"), [], "failed on the word '123456'")
+    test.assert_equals(vowel_indices("UNDISARMED"), [1,4,6,9], "failed on the word 'UNDISARMED'. Consider case")
+
+-----------------------------------------------------------------------
