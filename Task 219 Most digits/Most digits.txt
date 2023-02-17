@@ -1,0 +1,28 @@
+
+Find the number with the most digits.
+
+If two numbers in the argument array have the same number of digits, return the first one in the array.
+
+-------------------------------------------------------------------------------------------------------
+
+Найдите число с наибольшим количеством цифр.
+
+Если два числа в массиве аргументов имеют одинаковое количество цифр, 
+вернуть первое число в массиве.
+
+-------------------------------------------------------------------------------------------------------
+
+import codewars_test as test
+from solution import find_longest
+
+@test.describe("Fixed Tests")
+def fixed_tests():
+    @test.it('Basic Test Cases')
+    def basic_test_cases():
+        test.assert_equals(find_longest([1, 10, 100]), 100)
+        test.assert_equals(find_longest([9000, 8, 800]), 9000)
+        test.assert_equals(find_longest([8, 900, 500]), 900)
+        test.assert_equals(find_longest([3, 40000, 100]), 40000)
+        test.assert_equals(find_longest([1, 200, 100000]), 100000)
+
+-----------------------------------------------------------------------
