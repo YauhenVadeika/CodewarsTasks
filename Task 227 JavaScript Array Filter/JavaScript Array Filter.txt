@@ -1,0 +1,37 @@
+
+Python has a built-in filter function that works similar to a JS filter.
+For more information about using this feature, see
+at https://docs.python.org/3/library/functions.html#filter .
+
+The solution will work like this:
+
+get_even_numbers([2,4,5,6]) => [2,4,6]
+
+-------------------------------------------------------------------------------------------------------
+
+В Python есть встроенная функция фильтра, 
+которая работает аналогично фильтру JS.
+Дополнительные сведения об этой функции см.
+на странице https://docs.python.org/3/library/functions.html#filter.
+
+Решение будет работать по совету:
+
+get_even_numbers([2,4,5,6]) => [2,4,6]
+
+-------------------------------------------------------------------------------------------------------
+
+import codewars_test as test
+from solution import get_even_numbers
+
+@test.describe("Fixed Tests")
+def fixed_tests():
+    @test.it('Basic Test Cases')
+    def basic_test_cases():
+        test.assert_equals(get_even_numbers([2,4,5,6]), [2,4,6], "Returned list is incorrect")
+        test.assert_equals(get_even_numbers([]), [], "Returned list is incorrect")
+        test.assert_equals(get_even_numbers([1]), [], "Returned list is incorrect")
+        test.assert_equals(get_even_numbers([1,2]), [2], "Returned list is incorrect")
+        test.assert_equals(get_even_numbers([1,2,3,4,5]), [2,4], "Returned list is incorrect")
+        test.assert_equals(get_even_numbers([2,4,6,8]), [2,4,6,8], "Returned list is incorrect")
+
+-----------------------------------------------------------------------
