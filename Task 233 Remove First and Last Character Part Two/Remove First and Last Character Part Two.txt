@@ -1,0 +1,68 @@
+
+This is a spin off of my first kata.
+
+You are given a string containing a sequence of character 
+sequences separated by commas.
+
+Write a function which returns a new string containing 
+the same character sequences except the first and the 
+last ones but this time separated by spaces.
+
+If the input string is empty or the removal of the 
+first and last items would cause the resulting string 
+to be empty, return an empty value (represented as a 
+generic value NULL in the examples below).
+
+Examples
+"1,2,3"      =>  "2"
+"1,2,3,4"    =>  "2 3"
+"1,2,3,4,5"  =>  "2 3 4"
+
+""     =>  NULL
+"1"    =>  NULL
+"1,2"  =>  NULL
+
+-------------------------------------------------------------------------------------------------------
+
+Это вращение от моей первой каты.
+
+Вам дают строку, содержащую последовательность последовательностей 
+символов, разделенных запятыми.
+
+Напишите функцию, которая возвращает новую строку, содержащую 
+одни и те же последовательности символов, за исключением 
+первых и последних, но на этот раз, разделенные пространствами.
+
+Если входная строка пуста или удаление первых и последних 
+элементов приведет к пустой, полученной строке, верните 
+пустое значение (представленное в виде общего значения, 
+нулевого в примерах ниже).
+
+Примеры
+"1,2,3" => "2"
+"1,2,3,4" => "2 3"
+"1,2,3,4,5" => "2 3 4"
+
+"" => NULL
+"1" => NULL
+"1,2" => NULL
+
+-------------------------------------------------------------------------------------------------------
+
+from solution import array
+import codewars_test as test
+
+@test.describe("Fixed Tests")
+def _():
+    @test.it("Should remove the first and last character")
+    def _():
+        test.assert_equals(array('1,2,3'), '2');
+        test.assert_equals(array('1,2,3,4'), '2 3');
+        test.assert_equals(array('1,2,3,4,5'), '2 3 4');
+    @test.it("Should return None if the final result is an empty string")
+    def _():
+        test.assert_equals(array(''), None);
+        test.assert_equals(array('1'), None);
+        test.assert_equals(array('1,2'), None);
+
+-----------------------------------------------------------------------
