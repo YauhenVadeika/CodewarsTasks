@@ -1,0 +1,51 @@
+
+Write a method that takes a field for well-known board game "Battleship" as an argument and returns true if it has a valid disposition of ships, false otherwise. Argument is guaranteed to be 10*10 two-dimension array. Elements in the array are numbers, 0 if the cell is free and 1 if occupied by ship.
+
+Battleship (also Battleships or Sea Battle) is a guessing game for two players. Each player has a 10x10 grid containing several "ships" and objective is to destroy enemy's forces by targetting individual cells on his field. The ship occupies one or more cells in the grid. Size and number of ships may differ from version to version. In this kata we will use Soviet/Russian version of the game.
+
+
+Before the game begins, players set up the board and place the ships accordingly to the following rules:
+There must be single battleship (size of 4 cells), 2 cruisers (size 3), 3 destroyers (size 2) and 4 submarines (size 1). Any additional ships are not allowed, as well as missing ships.
+Each ship must be a straight line, except for submarines, which are just single cell.
+
+The ship cannot overlap or be in contact with any other ship, neither by edge nor by corner.
+
+This is all you need to solve this kata. If you're interested in more information about the game, visit this link.
+
+-------------------------------------------------------------------------------------------------------
+
+Напишите метод, который принимает в качестве аргумента поле для известной настольной игры 
+«Морской бой» и возвращает значение true, если у него правильное расположение кораблей, 
+и значение false в противном случае. Аргумент гарантированно представляет собой двумерный массив 10*10. Элементами массива являются числа: 0, если ячейка свободна, и 1, если она занята кораблем.
+
+Морской бой (также Морской бой или Морской бой) — игра-угадайка для двух игроков. 
+У каждого игрока есть сетка 10x10, содержащая несколько «кораблей», и цель состоит в том, 
+чтобы уничтожить силы противника, нацеливаясь на отдельные клетки на его поле. 
+Корабль занимает одну или несколько ячеек в сетке. Размер и количество кораблей 
+могут отличаться от версии к версии. В этом ката мы будем использовать советскую/российскую версию игры.
+
+
+Перед началом игры игроки устанавливают игровое поле и размещают корабли в соответствии со следующими правилами:
+Должен быть один линкор (размер 4 ячейки), 2 крейсера (размер 3), 3 эсминца (размер 2) и 4 подводные лодки (размер 1). 
+Любые дополнительные корабли не допускаются, как и отсутствующие корабли.
+Каждый корабль должен быть прямой линией, за исключением подводных лодок, которые представляют собой одну ячейку.
+
+Корабль не может пересекаться или соприкасаться с любым другим кораблем ни краем, ни углом.
+
+Это все, что вам нужно, чтобы решить эту ката. Если вас интересует дополнительная информация об игре, перейдите по этой ссылке.
+
+-------------------------------------------------------------------------------------------------------
+
+battleField = [[1, 0, 0, 0, 0, 1, 1, 0, 0, 0],
+                 [1, 0, 1, 0, 0, 0, 0, 0, 1, 0],
+                 [1, 0, 1, 0, 1, 1, 1, 0, 1, 0],
+                 [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                 [0, 0, 0, 0, 0, 0, 0, 0, 1, 0],
+                 [0, 0, 0, 0, 1, 1, 1, 0, 0, 0],
+                 [0, 0, 0, 0, 0, 0, 0, 0, 1, 0],
+                 [0, 0, 0, 1, 0, 0, 0, 0, 0, 0],
+                 [0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
+                 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
+test.assert_equals(validate_battlefield(battleField), True, "Yep! Seems alright", "Nope, something is wrong!");
+
+-----------------------------------------------------------------------
