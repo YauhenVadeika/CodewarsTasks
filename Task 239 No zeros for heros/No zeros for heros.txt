@@ -1,0 +1,45 @@
+
+Numbers ending with zeros are boring.
+
+They might be fun in your world, but not here.
+
+Get rid of them. Only the ending ones.
+
+1450 -> 145
+960000 -> 96
+1050 -> 105
+-1050 -> -105
+Zero alone is fine, don't worry about it. Poor guy anyway
+
+-----------------------------------------------------------------------
+
+Числа, заканчивающиеся нулями, скучны.
+
+Они могут быть забавными в вашем мире, но не здесь.
+
+Избавься от них. Только конечные.
+
+1450 -> 145
+960000 -> 96
+1050 -> 105
+-1050 -> -105
+Один только ноль в порядке, не беспокойтесь об этом. 
+Бедный парень в любом случае
+
+-----------------------------------------------------------------------
+
+import codewars_test as test
+from solution import no_boring_zeros
+
+@test.describe("Fixed Tests")
+def fixed_tests():
+    @test.it('Basic Test Cases')
+    def basic_test_cases():
+        test.assert_equals(no_boring_zeros(1450), 145)
+        test.assert_equals(no_boring_zeros(960000), 96)
+        test.assert_equals(no_boring_zeros(1050), 105)
+        test.assert_equals(no_boring_zeros(-1050), -105)
+        test.assert_equals(no_boring_zeros(0), 0)
+        test.assert_equals(no_boring_zeros(2016), 2016)
+
+-----------------------------------------------------------------------
