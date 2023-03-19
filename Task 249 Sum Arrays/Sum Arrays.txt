@@ -1,0 +1,65 @@
+
+Write a function that takes an array of numbers and returns 
+the sum of the numbers. The numbers can be negative or non-integer. 
+If the array does not contain any numbers then you should return 0.
+
+Examples
+Input: [1, 5.2, 4, 0, -1]
+Output: 9.2
+
+Input: []
+Output: 0
+
+Input: [-2.398]
+Output: -2.398
+
+Assumptions
+You can assume that you are only given numbers.
+You cannot assume the size of the array.
+You can assume that you do get an array and if the array is empty, return 0.
+What We're Testing
+We're testing basic loops and math operations. This is for beginners who are just 
+learning loops and math operations.
+Advanced users may find this extremely easy and can easily write this in one line.
+
+-----------------------------------------------------------------------
+
+Напишите функцию, которая принимает массив чисел и возвращает
+сумма чисел. Числа могут быть отрицательными или нецелыми.
+Если массив не содержит чисел, вы должны вернуть 0.
+
+Примеры
+Ввод: [1, 5.2, 4, 0, -1]
+Выход: 9,2
+
+Вход: []
+Выход: 0
+
+Ввод: [-2,398]
+Выход: -2,398
+
+Предположения
+Вы можете считать, что вам даны только цифры.
+Вы не можете предположить размер массива.
+Вы можете предположить, что вы получили массив, и если массив пуст, верните 0.
+Что мы тестируем
+Мы тестируем базовые циклы и математические операции. Это для новичков, которые только
+циклы обучения и математические операции.
+Продвинутым пользователям это может показаться очень простым, и они могут легко записать это в одну строку.
+
+-----------------------------------------------------------------------
+
+import codewars_test as test
+from solution import sum_array
+
+@test.describe("Testing sum array")
+def tests():
+    @test.it("Fixed tests")
+    def fixed_tests(): 
+        test.assert_equals(sum_array([]), 0)
+        test.assert_equals(sum_array([1, 2, 3]), 6)
+        test.assert_equals(sum_array([1.1, 2.2, 3.3]), 6.6)
+        test.assert_equals(sum_array([4, 5, 6]), 15)
+        test.assert_equals(sum_array(range(101)), 5050)
+
+-----------------------------------------------------------------------
