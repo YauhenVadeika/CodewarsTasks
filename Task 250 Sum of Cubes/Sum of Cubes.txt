@@ -1,0 +1,43 @@
+
+Write a function that takes a positive integer n, 
+sums all the cubed values from 1 to n (inclusive), 
+and returns that sum.
+
+Assume that the input n will always be a positive integer.
+
+Examples: (Input --> output)
+
+2 --> 9 (sum of the cubes of 1 and 2 is 1 + 8)
+3 --> 36 (sum of the cubes of 1, 2, and 3 is 1 + 8 + 27)
+
+-----------------------------------------------------------------------
+
+Напишите функцию, которая принимает положительное целое число n,
+суммирует все значения с кубиками от 1 до N (включительно),
+и возвращает эту сумму.
+
+Предположим, что вход n всегда будет положительным целым числом.
+
+Примеры: (Вход -> Выход)
+
+2 -> 9 (сумма кубиков 1 и 2 -1 + 8)
+3 -> 36 (сумма кубиков 1, 2 и 3 -1 + 8 + 27)
+
+-----------------------------------------------------------------------
+
+import codewars_test as test
+from solution import sum_cubes
+
+@test.describe("Sum of Cubes")
+def fixed_tests():
+    @test.it('Basic Test Cases')
+    def basic_test_cases():
+        test.assert_equals(sum_cubes(1), 1)
+        test.assert_equals(sum_cubes(2), 9)
+        test.assert_equals(sum_cubes(3), 36)
+        test.assert_equals(sum_cubes(4), 100)
+        test.assert_equals(sum_cubes(10), 3025)
+        test.assert_equals(sum_cubes(123), 58155876)
+        
+
+-----------------------------------------------------------------------
