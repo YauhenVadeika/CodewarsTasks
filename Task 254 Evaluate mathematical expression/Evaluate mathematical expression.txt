@@ -1,0 +1,99 @@
+
+Instructions
+Given a mathematical expression as a string you must return the result as a number.
+
+Numbers
+Number may be both whole numbers and/or decimal numbers. The same goes for the returned result.
+
+Operators
+You need to support the following mathematical operators:
+
+Multiplication *
+Division / (as floating point division)
+Addition +
+Subtraction -
+Operators are always evaluated from left-to-right, and * and / must be evaluated before + and -.
+
+Parentheses
+You need to support multiple levels of nested parentheses, ex. (2 / (2 + 3.33) * 4) - -6
+
+Whitespace
+There may or may not be whitespace between numbers and operators.
+
+An addition to this rule is that the minus sign (-) used for negating numbers and parentheses will never be separated by whitespace. I.e all of the following are valid expressions.
+
+1-1    // 0
+1 -1   // 0
+1- 1   // 0
+1 - 1  // 0
+1- -1  // 2
+1 - -1 // 2
+1--1   // 2
+
+6 + -(4)   // 2
+6 + -( -4) // 10
+And the following are invalid expressions
+
+1 - - 1    // Invalid
+1- - 1     // Invalid
+6 + - (4)  // Invalid
+6 + -(- 4) // Invalid
+Validation
+You do not need to worry about validation - you will only receive valid mathematical expressions following the above rules.
+
+Restricted APIs
+NOTE: eval and exec are disallowed in your solution.
+
+MATHEMATICSPARSINGALGORITHMS
+
+-----------------------------------------------------------------------
+
+инструкции
+Учитывая математическое выражение в виде строки, вы должны вернуть результат в виде числа.
+
+Числа
+Число может быть как целым числом, так и/или десятичным числом. То же самое касается возвращаемого результата.
+
+Операторы
+Вам необходимо поддерживать следующие математические операторы:
+
+Умножение *
+Деление / (как деление с плавающей запятой)
+Дополнение +
+Вычитание -
+Операторы всегда оцениваются слева направо, а * и / должны оцениваться перед + и -.
+
+Круглые скобки
+Вам необходимо поддерживать несколько уровней вложенных скобок, например. (2 / (2 + 3,33) * 4) - -6
+
+пробел
+Между числами и операторами может быть или не быть пробела.
+
+Дополнением к этому правилу является то, что знак минус (-), используемый для отрицания чисел и скобок, никогда не будет разделяться пробелом. I.e все следующие выражения являются допустимыми.
+
+1-1 // 0
+1 -1 // 0
+1- 1 // 0
+1 - 1 // 0
+1- -1 // 2
+1 - -1 // 2
+1--1 // 2
+
+6 + -(4) // 2
+6 + -(-4) // 10
+И следующие недопустимые выражения
+
+1 - - 1 // Недействительно
+1- - 1 // Недействительно
+6 + - (4) // Недействительно
+6 + -(- 4) // Недействительно
+Проверка
+Вам не нужно беспокоиться о проверке — вы получите только действительные математические выражения, соответствующие вышеуказанным правилам.
+
+Ограниченные API
+ПРИМЕЧАНИЕ. Использование eval и exec в вашем решении запрещено.
+
+-----------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------
