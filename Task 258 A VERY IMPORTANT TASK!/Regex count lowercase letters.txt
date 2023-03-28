@@ -1,0 +1,49 @@
+
+Your task is simply to count the total number of lowercase letters in a string.
+
+Examples
+lowercaseCount("abc"); ===> 3
+
+lowercaseCount("abcABC123"); ===> 3
+
+lowercaseCount("abcABC123!@€£#$%^&*()_-+=}{[]|\':;?/>.<,~"); ===> 3
+
+lowercaseCount(""); ===> 0;
+
+lowercaseCount("ABC123!@€£#$%^&*()_-+=}{[]|\':;?/>.<,~"); ===> 0
+
+lowercaseCount("abcdefghijklmnopqrstuvwxyz"); ===> 26
+
+-----------------------------------------------------------------------
+
+Ваша задача — просто подсчитать общее количество строчных букв в строке.
+
+Примеры
+нижний регистр("abc"); ===> 3
+
+нижний регистрCount("abcABC123"); ===> 3
+
+нижний регистрCount("abcABC123!@€£#$%^&*()_-+=}{[]|\':;?/>.<,~"); ===> 3
+
+счетчик нижнего регистра(""); ===> 0;
+
+нижний регистрCount("ABC123!@€£#$%^&*()_-+=}{[]|\':;?/>.<,~"); ===> 0
+
+нижний регистрCount("abcdefghijklmnopqrstuvwxyz"); ===> 26
+-----------------------------------------------------------------------
+
+import codewars_test as test
+from solution import lowercase_count
+
+@test.describe("Fixed Tests")
+def fixed_tests():
+    @test.it('Basic Test Cases')
+    def basic_test_cases():
+        test.assert_equals(lowercase_count("abc"), 3)
+        test.assert_equals(lowercase_count("abcABC123"), 3)
+        test.assert_equals(lowercase_count("abcABC123!@#$%^&*()_-+=}{[]|\':;?/>.<,~"), 3)
+        test.assert_equals(lowercase_count(""), 0)
+        test.assert_equals(lowercase_count("ABC123!@#$%^&*()_-+=}{[]|\':;?/>.<,~"), 0)
+        test.assert_equals(lowercase_count("abcdefghijklmnopqrstuvwxyz"), 26)
+
+-----------------------------------------------------------------------
