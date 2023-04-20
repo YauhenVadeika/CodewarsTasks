@@ -1,0 +1,45 @@
+
+Your task is to make a function that can take any 
+non-negative integer as an argument and return it 
+with its digits in descending order. 
+Essentially, rearrange the digits to create the highest possible number.
+
+Examples:
+Input: 42145 Output: 54421
+
+Input: 145263 Output: 654321
+
+Input: 123456789 Output: 987654321
+
+-----------------------------------------------------------------------
+
+Ваша задача состоит в том, чтобы сделать функцию, которая может принимать любые
+неотрицательное целое число в качестве аргумента и вернуть его
+с его цифрами в порядке убывания.
+По сути, переставьте цифры, чтобы получить максимально возможное число.
+
+Примеры:
+Ввод: 42145 Вывод: 54421
+
+Ввод: 145263 Вывод: 654321
+
+Ввод: 123456789 Вывод: 987654321
+
+-----------------------------------------------------------------------
+
+import codewars_test as test
+
+try:
+    from solution import Descending_Order as descending_order
+except ImportError:
+    from solution import descending_order
+
+@test.describe("Fixed Tests")
+def fixed_tests():
+    @test.it('Basic Test Cases')
+    def basic_test_cases():
+        test.assert_equals(descending_order(0), 0)
+        test.assert_equals(descending_order(15), 51)
+        test.assert_equals(descending_order(123456789), 987654321)
+
+-----------------------------------------------------------------------
