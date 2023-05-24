@@ -1,0 +1,40 @@
+
+Complete the function/method so that it takes a 
+PascalCase string and returns the string in snake_case notation. 
+Lowercase characters can be numbers. If the method gets a 
+number as input, it should return a string.
+
+Examples
+"TestController"  -->  "test_controller"
+"MoviesAndBooks"  -->  "movies_and_books"
+"App7Test"        -->  "app7_test"
+1                 -->  "1"
+
+-----------------------------------------------------------------------
+
+Завершите функцию/метод так, чтобы он занимал
+PascalCase и возвращает строку в виде змеиного регистра.
+Символы нижнего регистра могут быть цифрами. Если метод получает
+число в качестве входных данных, он должен возвращать строку.
+
+Примеры
+"Контроллер тестов" --> "Контроллер_тестов"
+"Фильмы и книги" --> "фильмы и книги"
+"App7Test" --> "app7_test"
+1 --> "1"
+
+-----------------------------------------------------------------------
+
+import codewars_test as test
+from solution import *
+
+@test.describe("Sample tests")
+def sample_tests():
+    @test.it("Tests")
+    def it_1():
+        test.assert_equals(to_underscore("TestController"), "test_controller")
+        test.assert_equals(to_underscore("MoviesAndBooks"), "movies_and_books")
+        test.assert_equals(to_underscore("App7Test"), "app7_test")
+        test.assert_equals(to_underscore(1), "1")
+
+-----------------------------------------------------------------------
