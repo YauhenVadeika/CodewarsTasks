@@ -1,0 +1,41 @@
+
+There is an array of strings. All strings contains similar letters except one. Try to find it!
+
+find_uniq([ 'Aa', 'aaa', 'aaaaa', 'BbBb', 'Aaaa', 'AaAaAa', 'a' ]) # => 'BbBb'
+find_uniq([ 'abc', 'acb', 'bac', 'foo', 'bca', 'cab', 'cba' ]) # => 'foo'
+Strings may contain spaces. Spaces are not significant, only non-spaces symbols matters. 
+E.g. string that contains only spaces is like empty string.
+
+It’s guaranteed that array contains more than 2 strings.
+
+This is the second kata in series:
+
+Find the unique number
+Find the unique string (this kata)
+Find The Unique
+
+-----------------------------------------------------------------------
+
+Есть массив строк. Все строки содержат похожие буквы, кроме одной. Попробуйте найти!
+
+find_uniq([ 'Аа', 'ааа', 'ааааа', 'ВбВб', 'Аааа', 'АаАаАа', 'а' ]) # => 'ВбВб'
+find_uniq([ 'abc', 'acb', 'bac', 'foo', 'bca', 'cab', 'cba' ]) # => 'foo'
+Строки могут содержать пробелы. Пробелы не имеют значения, важны только символы без пробелов.
+Например. строка, содержащая только пробелы, подобна пустой строке.
+
+Гарантируется, что массив содержит более 2 строк.
+
+Это вторая ката в серии:
+
+Найдите уникальный номер
+Найдите уникальную строку (это ката)
+Найдите уникальное
+
+-----------------------------------------------------------------------
+
+test.describe('should handle sample cases')
+test.assert_equals(find_uniq([ 'Aa', 'aaa', 'aaaaa', 'BbBb', 'Aaaa', 'AaAaAa', 'a' ]), 'BbBb')
+test.assert_equals(find_uniq([ 'abc', 'acb', 'bac', 'foo', 'bca', 'cab', 'cba' ]), 'foo')
+test.assert_equals(find_uniq([ '    ', 'a', '  ' ]), 'a')
+
+-----------------------------------------------------------------------
