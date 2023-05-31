@@ -1,0 +1,52 @@
+
+Create a function that takes a positive integer and returns 
+the next bigger number that can be formed by rearranging its digits. 
+For example:
+
+  12 ==> 21
+ 513 ==> 531
+2017 ==> 2071
+If the digits can't be rearranged to form a bigger number, return -1 
+(or nil in Swift, None in Rust):
+
+  9 ==> -1
+111 ==> -1
+531 ==> -1
+
+-----------------------------------------------------------------------
+
+Создайте функцию, которая принимает положительное целое число и возвращает
+следующее большее число, которое можно составить, переставив его цифры.
+Например:
+
+   12 ==> 21
+  513 ==> 531
+2017 ==> 2071
+Если цифры нельзя переставить, чтобы получить большее число, 
+вернуть -1.
+(или ноль в Swift, None в Rust):
+
+   9 ==> -1
+111 ==> -1
+531 ==> -1
+
+Testing for 842665763092
+-1 should equal 842665763209
+-----------------------------------------------------------------------
+
+from solution import next_bigger
+import codewars_test as test
+
+@test.describe("Sample tests")
+def sample_tests():
+    
+    @test.it("Examples")
+    def examples():    
+        test.assert_equals(next_bigger(  12),   21)
+        test.assert_equals(next_bigger(  21),   -1)
+        test.assert_equals(next_bigger( 513),  531)
+        test.assert_equals(next_bigger(2017), 2071)
+        test.assert_equals(next_bigger( 414),  441)
+        test.assert_equals(next_bigger( 144),  414)
+
+-----------------------------------------------------------------------
