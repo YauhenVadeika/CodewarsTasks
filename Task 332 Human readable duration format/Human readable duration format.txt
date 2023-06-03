@@ -1,0 +1,112 @@
+
+Your task in order to complete this Kata is to write a 
+function which formats a duration, given as a number of seconds, in a human-friendly way.
+
+The function must accept a non-negative integer. 
+If it is zero, it just returns "now". Otherwise, 
+the duration is expressed as a combination of years, days, hours, minutes and seconds.
+
+It is much easier to understand with an example:
+
+* For seconds = 62, your function should return 
+    "1 minute and 2 seconds"
+* For seconds = 3662, your function should return
+    "1 hour, 1 minute and 2 seconds"
+For the purpose of this Kata, a year is 365 days and a day is 24 hours.
+
+Note that spaces are important.
+
+Detailed rules
+The resulting expression is made of components like 4 seconds, 1 year, etc. 
+In general, a positive integer and one of the valid units of time, separated by a space. 
+The unit of time is used in plural if the integer is greater than 1.
+
+The components are separated by a comma and a space (", "). 
+Except the last component, which is separated by " and ", 
+just like it would be written in English.
+
+A more significant units of time will occur before than a least significant one. 
+Therefore, 1 second and 1 year is not correct, but 1 year and 1 second is.
+
+Different components have different unit of times. 
+So there is not repeated units like in 5 seconds and 1 second.
+
+A component will not appear at all if its value happens to be zero. 
+Hence, 1 minute and 0 seconds is not valid, but it should be just 1 minute.
+
+A unit of time must be used "as much as possible". 
+It means that the function should not return 61 seconds, 
+but 1 minute and 1 second instead. Formally, 
+the duration specified by of a component must 
+not be greater than any valid more significant unit of time.
+
+-----------------------------------------------------------------------
+
+Ваша задача, чтобы завершить это Ката, состоит в том, чтобы написать
+функция, которая форматирует продолжительность, заданную как количество секунд, 
+удобным для человека способом.
+
+Функция должна принимать неотрицательное целое число.
+Если он равен нулю, он просто возвращает «сейчас». В противном случае,
+продолжительность выражается комбинацией лет, дней, часов, минут и секунд.
+
+Гораздо проще понять на примере:
+
+* Для секунд = 62 ваша функция должна вернуться
+     «1 минута и 2 секунды»
+* Для секунд = 3662 ваша функция должна вернуть
+     «1 час, 1 минута и 2 секунды»
+Для целей этого Ката год равен 365 дням, а день равен 24 часам.
+
+Обратите внимание, что пробелы важны.
+
+Подробные правила
+Результирующее выражение состоит из таких компонентов, как 4 секунды, 
+1 год и т. д.
+Как правило, положительное целое число и одна из допустимых единиц времени, 
+разделенные пробелом.
+Единица времени используется во множественном числе, 
+если целое число больше 1.
+
+Компоненты разделяются запятой и пробелом (",").
+За исключением последнего компонента, который разделен " и ",
+так же, как это было бы написано на английском языке.
+
+Более значимые единицы времени будут происходить раньше, чем наименее значимые.
+Следовательно, 1 секунда и 1 год — это неправильно, а 1 год и 1 секунда — правильно.
+
+Разные компоненты имеют разную единицу измерения времени.
+Таким образом, нет повторяющихся единиц, таких как 5 секунд и 1 секунда.
+
+Компонент вообще не появится, если его значение равно нулю.
+Следовательно, 1 минута и 0 секунд недействительны, но это должно быть всего 1 минута.
+
+Единица времени должна использоваться «насколько это возможно».
+Это означает, что функция не должна возвращать 61 секунду,
+но вместо этого 1 минута и 1 секунда. Формально,
+продолжительность, указанная компонентом, должна
+не быть больше, чем любая допустимая более значимая единица времени.
+
+-----------------------------------------------------------------------
+
+(1, "1 second"),
+(62, "1 minute and 2 seconds"),
+(120, "2 minutes"),
+(3600, "1 hour"),
+(3662, "1 hour, 1 minute and 2 seconds"),
+(15731080, '182 days, 1 hour, 44 minutes and 40 seconds'),
+(132030240, '4 years, 68 days, 3 hours and 4 minutes'),
+(205851834, '6 years, 192 days, 13 hours, 3 minutes and 54 seconds'),
+(253374061, '8 years, 12 days, 13 hours, 41 minutes and 1 second'),
+(242062374, '7 years, 246 days, 15 hours, 32 minutes and 54 seconds'),
+(101956166, '3 years, 85 days, 1 hour, 9 minutes and 26 seconds'),
+(33243586, '1 year, 19 days, 18 hours, 19 minutes and 46 seconds'),
+(9041160, '104 days, 15 hours and 26 minutes'),
+
+test.assert_equals(format_duration(1), "1 second")
+test.assert_equals(format_duration(62), "1 minute and 2 seconds")
+test.assert_equals(format_duration(120), "2 minutes")
+test.assert_equals(format_duration(3600), "1 hour")
+test.assert_equals(format_duration(3662), "1 hour, 1 minute and 2 seconds")
+
+-----------------------------------------------------------------------
