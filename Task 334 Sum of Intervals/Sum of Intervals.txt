@@ -1,0 +1,132 @@
+
+Write a function called sumIntervals/sum_intervals that accepts 
+an array of intervals, 
+and returns the sum of all the interval lengths. 
+Overlapping intervals should only be counted once.
+
+Intervals
+Intervals are represented by a pair of integers 
+in the form of an array. 
+The first value of the interval will always be less 
+than the second value. 
+Interval example: [1, 5] is an interval from 1 to 5. 
+The length of this interval is 4.
+
+Overlapping Intervals
+List containing overlapping intervals:
+
+[
+   [1, 4],
+   [7, 10],
+   [3, 5]
+]
+The sum of the lengths of these intervals is 7. 
+Since [1, 4] and [3, 5] overlap, 
+we can treat the interval as [1, 5], which has a length of 4.
+
+Examples:
+sumIntervals( [
+   [1, 2],
+   [6, 10],
+   [11, 15]
+] ) => 9
+
+sumIntervals( [
+   [1, 4],
+   [7, 10],
+   [3, 5]
+] ) => 7
+
+sumIntervals( [
+   [1, 5],
+   [10, 20],
+   [1, 6],
+   [16, 19],
+   [5, 11]
+] ) => 19
+
+sumIntervals( [
+   [0, 20],
+   [-100000000, 10],
+   [30, 40]
+] ) => 100000030
+Tests with large intervals
+Your algorithm should be able to handle large intervals. 
+All tested intervals are subsets of the range [-1000000000, 1000000000].
+
+-----------------------------------------------------------------------
+
+Напишите функцию sumIntervals/sum_intervals, 
+которая принимает массив интервалов,
+и возвращает сумму всех длин интервалов. 
+Перекрывающиеся интервалы следует учитывать только один раз.
+
+Интервалы
+Интервалы представлены парой целых чисел в виде массива.
+Первое значение интервала всегда будет меньше второго значения.
+Пример интервала: [1, 5] — это интервал от 1 до 5. 
+Длина этого интервала равна 4.
+
+Перекрывающиеся интервалы
+Список, содержащий перекрывающиеся интервалы:
+
+[
+    [1, 4],
+    [7, 10],
+    [3, 5]
+]
+Сумма длин этих интервалов равна 7. Поскольку [1, 4] и 
+[3, 5] перекрываются,
+мы можем рассматривать интервал как [1, 5], который имеет длину 4.
+
+Примеры:
+суммаинтервалов([
+    [1, 2],
+    [6, 10],
+    [11, 15]
+] ) => 9
+
+суммаинтервалов([
+    [1, 4],
+    [7, 10],
+    [3, 5]
+] ) => 7
+
+суммаинтервалов([
+    [1, 5],
+    [10, 20],
+    [1, 6],
+    [16, 19],
+    [5, 11]
+] ) => 19
+
+суммаинтервалов([
+    [0, 20],
+    [-100000000, 10],
+    [30, 40]
+] ) => 100000030
+Тесты с большими интервалами
+Ваш алгоритм должен быть в состоянии обрабатывать большие интервалы.
+Все протестированные интервалы являются подмножествами 
+диапазона [-1000000000, 1000000000].
+
+-----------------------------------------------------------------------
+
+from solution import sum_of_intervals
+import codewars_test as test
+
+@test.describe("Fixed tests")
+def fixed_tests():
+    @test.it("Tests")
+    def it_1():
+        test.assert_equals(sum_of_intervals([(1, 5)]), 4)
+        test.assert_equals(sum_of_intervals([(1, 5), (6, 10)]), 8)
+        test.assert_equals(sum_of_intervals([(1, 5), (1, 5)]), 4)
+        test.assert_equals(sum_of_intervals([(1, 4), (7, 10), (3, 5)]), 7)
+        
+    @test.it("Large numbers")
+    def it_2():
+        test.assert_equals(sum_of_intervals([(-1_000_000_000, 1_000_000_000)]), 2_000_000_000)
+        test.assert_equals(sum_of_intervals([(0, 20), (-100_000_000, 10), (30, 40)]), 100_000_030)
+
+-----------------------------------------------------------------------
